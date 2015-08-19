@@ -118,6 +118,8 @@ gem 'rails-observers', '~> 0.1.2'
 # it's a hack and should be removed soon.
 gem 'demoji'
 
+gem 'faraday', '~> 0.9.1'
+
 group :staging, :production do
   gem 'newrelic_rpm', '~> 3.9.1.236'
   gem 'rails_12factor', '~> 0.0.3'
