@@ -119,6 +119,7 @@ gem 'rails-observers', '~> 0.1.2'
 gem 'demoji'
 
 gem 'faraday', '~> 0.9.1'
+gem 'faraday_middleware', '~> 0.10.0'
 
 group :staging, :production do
   gem 'newrelic_rpm', '~> 3.9.1.236'
