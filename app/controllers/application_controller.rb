@@ -44,6 +44,16 @@ class ApplicationController < ActionController::Base
 
   rescue_from RestClient::Unauthorized, :with => :session_unauthorized
 
+  rescue_from ActionController::UnknownFormat, :with => :not_found
+  rescue_from ActionController::RoutingError, :with => :not_found
+
+  def not_found
+    respond_to do |format|
+      #format.html {render "errors/status_404", status: 404, locals: { status: 404, title: error_title(404) }}
+      format.all { render nothing: true, status: 404 }
+    end
+  end
+
   helper_method :root, :logged_in?, :current_user?
 
   def redirect_removed_locale
@@ -541,6 +551,14 @@ class ApplicationController < ActionController::Base
   #
   def self.ensure_feature_enabled(feature_name, options = {})
     before_filter(options) { ensure_feature_enabled(feature_name) }
+  end
+
+  def error_title(status)
+    community_name = Maybe(@current_community).map { |c|
+      c.name(community_locale)
+    }.or_else(nil)
+
+    [community_name, t("error_pages.error_#{status}_title")].compact.join(' - ')
   end
 
   def render_not_found!(msg = "Not found")
