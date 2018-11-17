@@ -1,4 +1,14 @@
-# Sharetribe
+# upSharetribe fork
+
+
+### Purpose of this fork
+- make code style clean
+- move delayed_job to sidekiq
+- add payment stripe payemtn feature (save card for future payments and etc)
+- Faster accept PR from original repository
+- Capistrano as default deployment
+- update latest ruby/rails
+
 
 [![Build Status](https://travis-ci.org/sharetribe/sharetribe.svg?branch=master)](https://travis-ci.org/sharetribe/sharetribe) [![Dependency Status](https://gemnasium.com/sharetribe/sharetribe.png)](https://gemnasium.com/sharetribe/sharetribe) [![Code Climate](https://codeclimate.com/github/sharetribe/sharetribe.png)](https://codeclimate.com/github/sharetribe/sharetribe) [![Coverage Status](https://coveralls.io/repos/sharetribe/sharetribe/badge.png)](https://coveralls.io/r/sharetribe/sharetribe)
 
